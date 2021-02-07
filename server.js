@@ -97,29 +97,7 @@ server.route('/api/captcha')
    checking = async (token) => {
     /* await axios.post(`https://www.google.com/recaptcha/api/siteverify`,
     {data : {secret: 'secret'}}) */
-    await axios.post(
-        `https://www.google.com/recaptcha/api/siteverify?secret=${secret}&response=${token}`,
-        {},
-        {
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
-          },
-        },
-      )
-    .then(function (response) {
-        console.log(`Request n: ${captchaRequests}`, response.data, moment().format('MMMM Do YYYY, h:mm:ss a') );
-        
-        captchaCheck.checked = true;
-        captchaCheck.response = response.data;
-        //res.send(500).json({checked: true})
-        captchaResponse = captchaCheck;
-        
-    })
-    .catch(function (error) {
-        console.log(error);
-       
-        
-    });
+    
     return captchaCheck;
   }
 
