@@ -2,7 +2,8 @@
   "name": "mathessprod-server",
   "version": "1.0.0",
   "description": "mathesspros server ",
-  "main": "app.js",
+  "postinstall": "npm run build",
+  "start": "node app.js",  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
