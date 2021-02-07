@@ -45,7 +45,7 @@ app.route('/api/captcha')
     res.send('Update the book')
   })
 
-  app.listen(8080, function() {
+  app.listen(process.env.PORT || 8080, function() {
     console.log('Server is listenning on port 8080 . . .');
 })
 
