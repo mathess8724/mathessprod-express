@@ -44,12 +44,18 @@ app.route('/api/captcha')
   .put(function (req, res) {
     res.send('Update the book')
   })
+  app.listen(process.env.PORT, '0.0.0.0');
+  console.log('listenning port ' + process.env.PORT);
+/*   app.listen(config.port, function () {
+    console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+  }); */
+/* 
 
 var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
 var server_host = process.env.YOUR_HOST || '0.0.0.0';
 app.listen(server_port, server_host, function() {
     console.log('Listening on port %d', server_port);
-});
+}); */
  /*  app.listen(process.env.PORT || 8080, function() {
     console.log('Server is listenning on port'+ process.env.PORT );
 }) */
