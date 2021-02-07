@@ -48,7 +48,7 @@ app.route('/api/captcha')
   console.log('listenning port ' + process.env.PORT);
   const argv = require('yargs').argv;
 
-const port = argv.port || 8081;
+//const port = argv.port || 8081;
 var port = process.env.PORT || 3002
 
 app.listen(port, ()=>{
