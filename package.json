@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "mathesspros server ",
   "postinstall": "npm run build",
-  "start": "node app.js",  
+  "start": "node app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "moment": "^2.29.1"
+    "moment": "^2.29.1",
+    "yargs": "^16.2.0"
   }
 }

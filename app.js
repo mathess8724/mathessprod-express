@@ -46,6 +46,13 @@ app.route('/api/captcha')
   })
   app.listen(process.env.PORT, '0.0.0.0');
   console.log('listenning port ' + process.env.PORT);
+  const argv = require('yargs').argv;
+
+const port = argv.port || 8081;
+
+app.listen(argv.port, ()=>{
+    console.log('Probably listening to heroku $PORT now ', argv.port); // unless $PORT is undefined, in which case you're listening to 8081.
+});
 /*   app.listen(config.port, function () {
     console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
   }); */
