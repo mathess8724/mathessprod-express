@@ -20,11 +20,13 @@ let captchaRequests = 0;
 app.get('/', function(req, res) {
     counter ++;
     console.log('new get request')
+
+    res.send('hello world server running!');
     
-    res.setHeader('Content-Type', 'text/html');
+ /*    res.setHeader('Content-Type', 'text/html');
     res.status(200).send(`<h4>Server is running . . .</h4><br>
     <p>Start running at  ${startTime}</p><p>visits: ${counter}<p/>
-    <br><br><div>captcha requests : ${captchaRequests}</div>`);
+    <br><br><div>captcha requests : ${captchaRequests}</div>`); */
 });
 
 app.route('/api/captcha')
