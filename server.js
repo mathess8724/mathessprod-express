@@ -14,6 +14,7 @@ server.use(cors());
 // visits counter
 let startTime = moment().format('MMMM Do YYYY, h:mm:ss a');
 let counter = 0;
+let latestGet;
 let captchaRequests = 0;
 
 // bodyparser config
@@ -30,10 +31,14 @@ captchaCheck = {
 // Configure routes
 server.get('/', function(req, res) {
     counter ++;
+    latestGet = moment().format('MMMM Do YYYY, h:mm:ss a');
+    current = moment().format('MMMM Do YYYY, h:mm:ss a');
+    console.log('new get at ' + latestGet);
     captcha = checking();
     
     res.setHeader('Content-Type', 'text/html');
     res.status(200).send(`<h4>Server is running . . .</h4><br>
+    <p>Latest get ${latestGet}<p><br>
     <p>Start running at  ${startTime}</p><p>visits: ${counter}<p/>
     <br><br><div>captcha requests : ${captchaRequests}</div>`);
 });
